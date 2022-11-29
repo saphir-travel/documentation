@@ -14,3 +14,4 @@ Tutorials
     howtos/company
     howtos/accounting_localization
     howtos/translations
+    howtos/website_themes
