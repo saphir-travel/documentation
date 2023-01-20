@@ -9,6 +9,7 @@ Localizations
 
    localizations/argentina
    localizations/australia
+   localizations/belgium
    localizations/chile
    localizations/colombia
    localizations/colombia_ES
