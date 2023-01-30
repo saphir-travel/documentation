@@ -51,8 +51,7 @@ Semantic components
 -------------------
 
 Semantic components tie into and allow interaction with the Odoo
-system. Placeholders are denoted in all caps. Available semantic components
-are:
+system. Placeholders are denoted in all caps.
 
 .. _reference/user_interface/views/form/field:
 
@@ -90,13 +89,10 @@ magic value `parent` refere to the values from container view.
   string_
 
   fields have a default rendering based on their type
-  (e.g. :class:`~odoo.fields.Char`, :class:`~odoo.fields.Many2one`). The
-  ``widget`` attributes allows using a different rendering method and context.
+  (e.g. :class:`~odoo.fields.Char`, :class:`~odoo.fields.Many2one`).
 
-  .. todo:: list of widgets
-
-      & options & specific attributes (e.g. widget=statusbar
-      statusbar_visible clickable)
+  The ``widget`` attributes allows using a different rendering method and context.
+  See more information in :ref:`reference/js/widgets`
 
   .. code-block:: xml
 
@@ -245,6 +241,20 @@ magic value `parent` refere to the values from container view.
 
   defines the field on which the focus will be made when displaying the form view
 
+:ref:`Relational fields <studio/fields/relational-fields>` node can contain subviews.
+
+.. code-block:: xml
+
+  <field name="children_ids">
+    <tree>
+      <field name="name"/>
+    </tree>
+    <form>
+      <field name="id"/>
+      <field name="name"/>
+    </form>
+  </field>
+
 .. _reference/user_interface/views/form/label:
 
 <label>: displays other field label
@@ -340,12 +350,15 @@ manual alternative of displaying the label of a field. Possible attributes are:
 :data-hotkey:
   string_ only one char or ``shift+`` + one char
 
-  Define a hotkey (`keyboard_shortcut`_) enable when ``alt`` keypress to
-  facilitate access to the action.
+  Define a hotkey (`keyboard_shortcut`_ similar to an accesskey_) enable when
+  ``alt`` keypress to facilitate access to the action.
 
   .. code-block:: xml
 
     <button type="object" name="action_tear" string="Tear the sheet" data-hotkey="shift+k"/>
+
+:invisible:
+  same as for :ref:`field <reference/user_interface/views/form/field>` component.
 
 Messaging features
 ~~~~~~~~~~~~~~~~~~
@@ -362,7 +375,7 @@ The widget is linked to specific python code of this :ref:`reference/mixins/mail
 
     <form>
       <sheet>
-        <FIELD/>
+        CONTENT
       </sheet>
       <div class="oe_chatter">
         <field name="message_follower_ids"/>
@@ -380,7 +393,7 @@ The element must be an empty div with classname ``o_attachment_preview``.
 
     <form>
       <sheet>
-        <FIELD/>
+        CONTENT
       </sheet>
       <div class="o_attachment_preview"/>
     <form>
@@ -394,55 +407,78 @@ Structural components
 
 Structural components provide structure or "visual" features with little
 logic. They are used as elements or sets of elements in form views. 
-Placeholders are denoted in all caps. Available semantic components are:
+Placeholders are denoted in all caps.
 
 .. _reference/user_interface/views/form/group:
 
 <group>: Columns layout
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Used to define column layouts in forms. By default, groups define 2 columns and most
-direct children of groups take a single column. ``<field>`` direct children of groups
-display a label by default, and the label and the field itself have a colspan of 1 each.
-
-The number of columns in a ``<group>`` can be customized using the ``col`` attribute, the
-number of columns taken by an element can be customized using ``colspan``.
-
-Children are laid out horizontally (tries to fill the next column before changing row).
-
-Groups can have a ``string`` attribute, which is displayed as the group’s title.
-
-Below is a possible structure and the representation of its rendering.
-
-.. image:: views/form_group.svg
-
 .. code-block:: xml
 
   <form>
     <group>
-      <field name="FIELD_NAME"/>
-      <field name="FIELD_NAME"/>
-    </group>
-    <group string="TITLE">
-      <group string="TITLE">
-        <field name="FIELD_NAME"/>
-        <field name="FIELD_NAME"/>
-      </group>
-      <group>
-        <field name="FIELD_NAME"/>
-        <field name="FIELD_NAME"/>
-        <field name="FIELD_NAME"/>
-      </group>
-    </group>
-    <group col="12">
-      <group colspan="8">
-        <field name="FIELD_NAME"/>
-      </group>
-      <group colspan="4">
-        <field name="FIELD_NAME"/>
-      </group>
+      CONTENT
     </group>
   </form>
+
+Used to define column layouts in forms. By default, groups define 2 columns and most
+direct children of groups take a single column.
+:ref:`<field> <reference/user_interface/views/form/field>` direct children of groups
+display a ``label`` by default, and the label and the field itself have a colspan of 1
+each.
+
+Children are laid out horizontally (tries to fill the next column before changing row).
+
+Groups can have the following attributes:
+
+:col:
+  integer_ (default: 2)
+
+  number of columns in a ``<group>``
+
+:colspan:
+  integer_ (default: 1)
+
+  number of columns taken by an element
+
+:string:
+  string_
+
+  displayed a group’s title
+
+:invisible:
+  same as for :ref:`field <reference/user_interface/views/form/field>` component.
+
+Below is a possible structure and the representation of its rendering.
+
+.. code-block:: xml
+
+  <group>
+    <field name="FIELD_NAME"/>
+    <field name="FIELD_NAME"/>
+  </group>
+  <group string="TITLE">
+    <group string="TITLE">
+      <field name="FIELD_NAME"/>
+      <field name="FIELD_NAME"/>
+    </group>
+    <group>
+      <field name="FIELD_NAME"/>
+      <field name="FIELD_NAME"/>
+      <field name="FIELD_NAME"/>
+    </group>
+  </group>
+  <group col="12">
+    <group colspan="8">
+      <field name="FIELD_NAME"/>
+    </group>
+    <group colspan="4">
+      <field name="FIELD_NAME"/>
+    </group>
+  </group>
+
+.. image:: form_group.svg
 
 .. _reference/user_interface/views/form/sheet:
 
@@ -450,109 +486,148 @@ Below is a possible structure and the representation of its rendering.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ``<sheet>`` can be used as a direct child to ``<form>`` for a narrower and more responsive
-form layout.
+form layout. Usually it contains :ref:`<group> <reference/user_interface/views/form/group>`.
 
 .. code-block:: xml
 
   <form>
     <sheet>
-      <field name="fname"/>
+      CONTENT
     </sheet>
   </form>
 
 .. _reference/user_interface/views/form/notebook:
 
-<notebook>
-~~~~~~~~~~
+<notebook> & <page>: tabbed section
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: xml
 
   <form>
     <notebook>
       <page string="Page1">
-        <group>
-          <CONTENT/>
-        </group>
+        CONTENT
       </page>
       <page string="Page2">
-        <group>
-          <CONTENT/>
-        </group>
+        CONTENT
       </page>
     </notebook>
   </form>
 
-``notebook``
-  defines a tabbed section. Each tab is defined through a ``page`` child
-  element. Pages can have the following attributes:
+``notebook`` defines a tabbed section. Each tab is defined through a ``page``
+child element. Pages can have the following attributes:
 
-  .. rst-class:: o-definition-list
+:string:
+  string_ (required)
 
-  ``string`` (required)
-    the title of the tab
-  ``accesskey``
-    an HTML accesskey_
-  ``invisible``
-    standard dynamic attributes based on record values. Hide the field
-    if trully or if the domain result is trully
+  the title of the tab
 
-  .. note:: Note that ``notebook`` should not be placed within ``group``
+:invisible:
+  same as for :ref:`field <reference/user_interface/views/form/field>` component.
+
+  Can be apply on ``notebook`` and ``page`` nodes.
+
+.. note:: Note that ``notebook`` should not be placed within ``group``
 
 .. _reference/user_interface/views/form/newline:
 
-<newline>
-~~~~~~~~~
+<newline>: new row
+~~~~~~~~~~~~~~~~~~
 
-``newline``
-  only useful within ``group`` elements, ends the current row early and
-  immediately switches to a new row (without filling any remaining column
-  beforehand)
+.. code-block:: xml
+
+  <form>
+    <group>
+      CONTENT
+      <newline/>
+      CONTENT
+    </group>
+  </form>
+
+only useful within :ref:`<group> <reference/user_interface/views/form/group>`
+elements, ends the current row early and immediately switches to a new row
+(without filling any remaining column beforehand)
 
 .. _reference/user_interface/views/form/separator:
 
-<separator>
-~~~~~~~~~~~
+<separator>: horizontal spacing
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-``separator``
-  small horizontal spacing, with a ``string`` attribute behaves as a section
-  title
+.. code-block:: xml
+
+  <form>
+    CONTENT
+    <separator/>
+    CONTENT
+  </form>
+
+small horizontal spacing. Pages can have the following attributes:
+
+:string:
+  string_
+
+  the title as a section title
 
 .. _reference/user_interface/views/form/header:
 
-<header>
-~~~~~~~~
+<header>: workflow buttons and status
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: xml
 
   <form>
     <header>
       <BUTTONS/>
-      <field name="state" widget="statusbar"/>
     </header>
     <sheet>
-      <FIELD/>
+      CONTENT
     </sheet>
   </form>
 
-``header``
-  combined with ``sheet``, provides a full-width location above the sheet
-  itself, generally used to display workflow buttons and status widgets
+combined with :ref:`<sheet> <reference/user_interface/views/form/sheet>`,
+provides a full-width location above the sheet itself, generally used to
+display workflow :ref:`buttons <reference/user_interface/views/form/button>`
+and a :ref:`field <reference/user_interface/views/form/field>` display as
+status widget.
+
+Below is an example with the status widget with some options.
+
+.. code-block:: xml
+
+  <header>
+    <button string="Reset" type="object" name="set_draft" states="done"/>
+    <field name="state" widget="statusbar" statusbar_visible="draft,posted" options="{'clickable': 1}"/>
+  </header>
 
 .. _reference/user_interface/views/form/footer:
 
-<footer>
-~~~~~~~~
+<footer>: bottom/dialog buttons
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: xml
 
   <form>
     <sheet>
-      <FIELD/>
+      CONTENT
     </sheet>
     <footer>
       <BUTTONS/>
     </footer>
   </form>
+
+Display button at the bottom of the dialog. Used with :ref:`buttons <reference/user_interface/views/form/button>`
+
+The special action from ``<button>`` can save or cancel the form view displayed into the
+dialog. 
+
+.. code-block:: xml
+
+  <footer>
+      <button string="Save" special="save"/>
+      <button string="Feature action" type="object" name="my_action" class="btn-primary"/>
+      <button string="Discard" special="cancel"/>
+  </footer>
+
 
 container for buttons
 ~~~~~~~~~~~~~~~~~~~~~
@@ -567,6 +642,8 @@ container for buttons
       </sheet>
     <form>
 
+Container for specific rendering to display :ref:`buttons <reference/user_interface/views/form/button>`
+
 container for a title
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -580,6 +657,7 @@ container for a title
       </sheet>
     <form>
 
+Container for specific rendering to display a :ref:`<field> <reference/user_interface/views/form/field>` as title.
 
 .. todo:: classes for forms
 
@@ -715,6 +793,7 @@ additional tags: ``app``, ``block`` and ``setting``.
 .. _`python expression`: https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not
 
 .. _`Comma-separated values`: https://en.wikipedia.org/wiki/Comma-separated_values
+.. _integer: https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex
 .. _string: https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str
 .. _boolean: https://docs.python.org/3/library/stdtypes.html#boolean-values
 .. _dict: https://docs.python.org/3/library/stdtypes.html#mapping-types-dict

@@ -155,6 +155,8 @@ View objects expose a number of fields. They are optional unless specified other
 
   See :ref:`inheritance <reference/view_record/inheritance>` information
 
+.. note:: The current context and user access rights may also impact the view abilities.
+
 .. _reference/view_record/inheritance:
 
 Inheritance

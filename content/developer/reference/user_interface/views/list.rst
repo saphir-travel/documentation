@@ -171,6 +171,33 @@ Possible children elements of the list view are:
         ``{$name}`` can be ``bf`` (``font-weight: bold``), ``it``
         (``font-style: italic``), or any `bootstrap contextual color`_ (``danger``,
         ``info``, ``muted``, ``primary``, ``success`` or ``warning``).
+
+        Define a conditional display of a record in the style of a row's text based on the corresponding
+        record's attributes.
+
+        Values are Python expressions. For each record, the expression is evaluated
+        with the record's attributes as context values and if ``true``, the
+        corresponding style is applied to the row. Here are some of the other values
+        available in the context:
+
+        * ``uid``: the id of the current user,
+        * ``today``: the current local date as a string of the form ``YYYY-MM-DD``,
+        * ``now``: same as ``today`` with the addition of the current time.
+            This value is formatted as ``YYYY-MM-DD hh:mm:ss``.
+
+        .. code-block:: xml
+
+            <tree decoration-info="state == 'draft'"
+                decoration-danger="state == 'help_needed'"
+                decoration-bf="state='busy'">
+                <!-- TREE_VIEW_CONTENT -->
+            </tree>
+
+        .. warning::
+            Supported values differ for the two view types. The Gantt view only supports ``success``,
+            ``info``, ``warning``, ``danger`` and ``secondary`` displays. The list view supports ``bf``,
+            ``it``, ``success``, ``info``, ``warning``, ``danger``, ``muted`` and ``primary`` displays.
+
     ``nolabel``
         if set to "1", the column header will remain empty. Also, the column
         won't be sortable.
