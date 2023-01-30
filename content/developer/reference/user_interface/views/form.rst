@@ -478,7 +478,7 @@ Below is a possible structure and the representation of its rendering.
     </group>
   </group>
 
-.. image:: form_group.svg
+.. image:: views/form_group.svg
 
 .. _reference/user_interface/views/form/sheet:
 
