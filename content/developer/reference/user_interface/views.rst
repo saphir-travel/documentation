@@ -5,6 +5,7 @@ Views
 =====
 
 .. include:: views/form.rst
+.. include:: views/settings.rst
 
 .. _reference/user_interface/views/list:
 

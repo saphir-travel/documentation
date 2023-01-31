@@ -10,7 +10,7 @@ components.
 .. code-block:: xml
 
   <form>
-    CONTENT
+    ...
   </form>
 
 Optional attributes_ are added on root element is ``<form>`` to customize the view.
@@ -375,7 +375,7 @@ The widget is linked to specific python code of this :ref:`reference/mixins/mail
 
     <form>
       <sheet>
-        CONTENT
+        ...
       </sheet>
       <div class="oe_chatter">
         <field name="message_follower_ids"/>
@@ -393,11 +393,10 @@ The element must be an empty div with classname ``o_attachment_preview``.
 
     <form>
       <sheet>
-        CONTENT
+        ...
       </sheet>
       <div class="o_attachment_preview"/>
     <form>
-
 
 
 .. _reference/user_interface/views/form/structural:
@@ -418,7 +417,7 @@ Placeholders are denoted in all caps.
 
   <form>
     <group>
-      CONTENT
+      ...
     </group>
   </form>
 
@@ -430,7 +429,7 @@ each.
 
 Children are laid out horizontally (tries to fill the next column before changing row).
 
-Groups can have the following attributes:
+``<group>`` can have the following attributes:
 
 :col:
   integer_ (default: 2)
@@ -492,7 +491,7 @@ form layout. Usually it contains :ref:`<group> <reference/user_interface/views/f
 
   <form>
     <sheet>
-      CONTENT
+      ...
     </sheet>
   </form>
 
@@ -506,16 +505,16 @@ form layout. Usually it contains :ref:`<group> <reference/user_interface/views/f
   <form>
     <notebook>
       <page string="Page1">
-        CONTENT
+        ...
       </page>
       <page string="Page2">
-        CONTENT
+        ...
       </page>
     </notebook>
   </form>
 
 ``notebook`` defines a tabbed section. Each tab is defined through a ``page``
-child element. Pages can have the following attributes:
+child element. ``<page>`` can have the following attributes:
 
 :string:
   string_ (required)
@@ -538,9 +537,9 @@ child element. Pages can have the following attributes:
 
   <form>
     <group>
-      CONTENT
+      ...
       <newline/>
-      CONTENT
+      ...
     </group>
   </form>
 
@@ -556,12 +555,12 @@ elements, ends the current row early and immediately switches to a new row
 .. code-block:: xml
 
   <form>
-    CONTENT
+    ...
     <separator/>
-    CONTENT
+    ...
   </form>
 
-small horizontal spacing. Pages can have the following attributes:
+small horizontal spacing. ``<separator>`` can have the following attributes:
 
 :string:
   string_
@@ -580,7 +579,7 @@ small horizontal spacing. Pages can have the following attributes:
       <BUTTONS/>
     </header>
     <sheet>
-      CONTENT
+      ...
     </sheet>
   </form>
 
@@ -608,7 +607,7 @@ Below is an example with the status widget with some options.
 
   <form>
     <sheet>
-      CONTENT
+      ...
     </sheet>
     <footer>
       <BUTTONS/>
@@ -628,6 +627,7 @@ dialog.
       <button string="Discard" special="cancel"/>
   </footer>
 
+.. _reference/user_interface/views/form/container:
 
 container for buttons
 ~~~~~~~~~~~~~~~~~~~~~
@@ -659,128 +659,6 @@ container for a title
 
 Container for specific rendering to display a :ref:`<field> <reference/user_interface/views/form/field>` as title.
 
-.. todo:: classes for forms
-
-.. todo:: widgets?
-
-Settings Form View
-------------------
-
-The settings form view is a customization of the form view. It's used to centralize all the settings
-of Odoo.
-
-This view differs from a generic form view because it has a search bar, a sidebar and accepts 3
-additional tags: ``app``, ``block`` and ``setting``.
-
-.. rst-class:: o-definition-list
-
-``app``
-  The ``app`` tag is used to declare the application on the settings view. It creates an entry with
-  its logo on the sidebar of the view. It also acts as delimiter when searching.
-
-  Syntax:
-
-  .. code-block:: xml
-
-    <app string="CRM" name="crm">
-    ...
-    </app>
-
-  Parameters:
-
-  .. rst-class:: o-definition-list
-
-  ``string``
-    The "display" name of the application.
-  ``name``
-    The technical name of the application (the name of the module).
-  ``logo`` (optional)
-    The relative path to the logo. If not set, the logo is created using the ``name`` parameter : ``/{name}/static/description/icon.png``.
-
-``block``
-  The ``block`` tag is used to declare a group of settings. This group can have a title and a description/help.
-
-  Syntax:
-
-  .. code-block:: xml
-
-    <block title="Title of group Bar">
-    ...
-    </block>
-
-  Parameters:
-
-  .. rst-class:: o-definition-list
-
-  ``title`` (optional)
-    The title of the block of settings, you can perform research on its text.
-  ``help`` (optional)
-    The description/help of the block of settings, you can perform research on its text.
-
-``setting``
-  The ``setting`` tag is used to declare the setting itself. The first field in the setting is
-  used as the main field (optional). This field is placed on the left panel (if it's a boolean field)
-  or on the top of the right panel (otherwise). The field is also used to create the setting label
-  if a ``string`` is not defined. The ``setting`` tag can also contain more elements (e.g. html),
-  all of these elements are rendered in the right panel.
-
-  Syntax:
-
-  .. code-block:: xml
-
-    <setting string="this is bar">
-        <field name="bar"/>
-        ...More elements
-    </setting>
-
-  Parameters:
-
-  .. rst-class:: o-definition-list
-
-  ``type`` (optional)
-    By default, a setting is visually separated on two panels (left and right), and is used to
-    edit a given field. By defining ``type='header'``, a special kind of setting is rendered
-    instead. This setting is used to modify the scope of the other settings. For example, on the
-    website application, this setting is used to indicate to which website the other settings
-    apply. The header setting is visually represented as a yellow banner on the top of the screen.
-  ``string`` (optional)
-    The text used as label of the setting. If it's not defined, the first field is used as label.
-  ``title`` (optional)
-    The text used as tooltip.
-  ``help`` (optional)
-    The help/description of the setting. This text is displayed just below the setting label (with classname ``text-muted``).
-  ``company_dependent`` (optional)
-    If this attribute is set to "1" an icon is displayed next to the setting label to explicit
-    that this setting is company-specific.
-  ``documentation`` (optional)
-    If this attribute is set, an icon is added next to the setting label, this icon is a link to the documentation.
-    Note that you can use relative or absolute path. The relative path is relative to ``https://www.odoo.com/documentation/<server_version>``,
-    so it's not necessary to hard-code the server version on the arch anymore.
-
-.. example::
-
-  .. code-block:: xml
-
-      <app string="CRM" name="crm">
-          <setting type="header" string="Foo">
-              <field name="foo" title="Foo?."/>
-              <button name="nameAction" type="object" string="Button"/>
-          </setting>
-          <block title="Title of group Bar">
-              <setting help="this is bar" documentation="/applications/technical/web/settings/this_is_a_test.html">
-                  <field name="bar"/>
-              </setting>
-              <setting string="This is Big BAR" company_specific="1">
-                  <field name="bar"/>
-              </setting>
-          </block>
-          <block title="Title of group Foo">
-              <setting string="Personalize setting" help="this is full personalize setting">
-                  <div>This is a different setting</div>
-              </setting>
-          </block>
-      </app>
-
 
 .. _`keyboard_shortcut`: https://en.wikipedia.org/wiki/Keyboard_shortcut
 .. _Odoo: https://www.odoo.com/
@@ -791,7 +669,8 @@ additional tags: ``app``, ``block`` and ``setting``.
 .. _accesskey: https://www.w3.org/TR/html5/editing.html#the-accesskey-attribute
 .. _floats: https://developer.mozilla.org/en-US/docs/Web/CSS/float
 .. _`python expression`: https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not
-
+.. _`relative path`: https://en.wikipedia.org/wiki/URL
+.. _path: https://en.wikipedia.org/wiki/Path_(computing)
 .. _`Comma-separated values`: https://en.wikipedia.org/wiki/Comma-separated_values
 .. _integer: https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex
 .. _string: https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str
