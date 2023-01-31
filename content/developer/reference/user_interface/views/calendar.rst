@@ -9,8 +9,28 @@ calendar.
    order to set the initial focus of the calendar on the period (see `mode`) around
    this date (the context key to use being `initial_date`)
 
-Their root element is ``<calendar>``. Available attributes on the
+Their root element is ``<calendar>``. Available attributes_ on the
 calendar view are:
+
+:string:
+  string_ (optional)
+
+  View name
+
+:create:
+  boolean_ (optional)
+
+  Disable/enable record creation on the view.
+
+:edit:
+  boolean_ (optional)
+
+  Disable/enable record editing on the view.
+
+:delete:
+  boolean_ (optional)
+
+  Disable/enable record deletion on the view through the **Action** dropdown.
 
 .. rst-class:: o-definition-list
 

@@ -12,7 +12,27 @@ work-progress management), or ungrouped (used simply to visualize records).
           the user).
 
 The root element of the Kanban view is ``<kanban>``, it can use the following
-attributes:
+attributes_:
+
+:string:
+  string_ (optional)
+
+  View name
+
+:create:
+  boolean_ (optional)
+
+  Disable/enable record creation on the view.
+
+:edit:
+  boolean_ (optional)
+
+  Disable/enable record editing on the view.
+
+:delete:
+  boolean_ (optional)
+
+  Disable/enable record deletion on the view through the **Action** dropdown.
 
 .. rst-class:: o-definition-list
 

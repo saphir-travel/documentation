@@ -5,6 +5,8 @@
       <button type="object" name="ACTION" icon="FONT_AWESOME"/>
     </form>
 
+``<button>`` can have the following attributes:
+
 :icon:
   string_
 

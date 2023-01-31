@@ -124,7 +124,7 @@ View objects expose a number of fields. They are optional unless specified other
   :class:`~odoo.fields.Many2one`
 
   Reference to the parent view on which the inheritance will be applied. It
-  value is uset by default. Specify the parent using the ``ref`` attribute as 
+  value is uset by default. Specify the parent using the ``ref`` attribute as
   `ref="ADDON.MODEL_parent_view_TYPE"`. The addon name (separate by dot) is
   not necessary if the inheritance is done on a record of the same module.
 
@@ -331,7 +331,6 @@ how the matched node should be altered. By default the value is ``inside``.
           <field name="my_field" position="move"/>
       </field>
 
-
 Model Commons
 =============
 
@@ -342,3 +341,5 @@ Model Commons
 
 .. _pivot table: https://en.wikipedia.org/wiki/Pivot_table
 .. _XPath: https://en.wikipedia.org/wiki/XPath
+.. _path: https://en.wikipedia.org/wiki/Path_(computing)
+.. _boolean: https://docs.python.org/3/library/stdtypes.html#boolean-values

@@ -8,7 +8,6 @@ User interface
     :titlesonly:
 
     user_interface/view_record
-    user_interface/view_taxonomy
     user_interface/views
     user_interface/scss_inheritance
     user_interface/icons

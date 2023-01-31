@@ -8,7 +8,27 @@ Gantt
 Gantt views appropriately display Gantt charts (for scheduling).
 
 The root element of gantt views is ``<gantt/>``, it has no children but can
-take the following attributes:
+take the following attributes_:
+
+:string:
+  string_ (optional)
+
+  View name
+
+:create:
+  boolean_ (optional)
+
+  Disable/enable record creation on the view.
+
+:edit:
+  boolean_ (optional)
+
+  Disable/enable record editing on the view.
+
+:delete:
+  boolean_ (optional)
+
+  Disable/enable record deletion on the view through the **Action** dropdown.
 
 .. rst-class:: o-definition-list
 

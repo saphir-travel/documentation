@@ -13,35 +13,40 @@ components.
     ...
   </form>
 
-Optional attributes_ are added on root element is ``<form>`` to customize the view.
+Optional attributes_ are added on root element ``<form>`` to customize the view.
 
 :string:
-  string_
+  string_ (optional)
 
   View name
 
 :create:
-  boolean_
+  boolean_ (optional)
 
   Disable/enable record creation on the view.
 
 :edit:
-  boolean_
+  boolean_ (optional)
 
   Disable/enable record editing on the view.
 
+:duplicate:
+  boolean_ (optional)
+
+  Disable/enable record duplication on the view through the **Action** dropdown.
+
 :delete:
-  boolean_
+  boolean_ (optional)
 
   Disable/enable record deletion on the view through the **Action** dropdown.
 
 :js_class:
-  string_
+  string_ (optional)
 
   Name of the javascript class to use when instantiating the view.
 
 :disable_autofocus:
-  boolean_
+  boolean_ (optional)
 
   Disable automatic focus of the first field in the view.
 
@@ -50,8 +55,8 @@ Optional attributes_ are added on root element is ``<form>`` to customize the vi
 Semantic components
 -------------------
 
-Semantic components tie into and allow interaction with the Odoo
-system. Placeholders are denoted in all caps.
+Semantic components tie into and allow interaction with the Odoo system.
+Placeholders are denoted in all caps.
 
 .. _reference/user_interface/views/form/field:
 
@@ -68,11 +73,7 @@ renders (and allow editing of, possibly) a single field of the current
 record. Using several times a field in a form view is supported and the fields
 can receive different values for modifiers 'invisible' and 'readonly'. However,
 the behavior is not guaranteed when several fields exist with different values
-for modifier 'required'. Possible attributes of the field node are:
-
-Some attributes can use `python expression`_, in this case this expression is
-evaluated with the values of the current view. In case of nested view, the
-magic value `parent` refere to the values from container view.
+for modifier 'required'. ``<field>`` can have the following attributes:
 
 :name:
   string_ (mandatory)
@@ -241,19 +242,21 @@ magic value `parent` refere to the values from container view.
 
   defines the field on which the focus will be made when displaying the form view
 
-:ref:`Relational fields <studio/fields/relational-fields>` node can contain subviews.
+.. note::
+  :ref:`Relational fields <studio/fields/relational-fields>` node can contain specific
+  subviews.
 
-.. code-block:: xml
+  .. code-block:: xml
 
-  <field name="children_ids">
-    <tree>
-      <field name="name"/>
-    </tree>
-    <form>
-      <field name="id"/>
-      <field name="name"/>
-    </form>
-  </field>
+    <field name="children_ids">
+      <tree>
+        <field name="name"/>
+      </tree>
+      <form>
+        <field name="id"/>
+        <field name="name"/>
+      </form>
+    </field>
 
 .. _reference/user_interface/views/form/label:
 
@@ -276,7 +279,8 @@ when a :ref:`field <reference/user_interface/views/form/field>` component
 isn't placed directly inside a :ref:`group <reference/user_interface/views/form/group>`,
 or when its ``nolabel`` attribute is set, the field's label isn't
 automatically displayed alongside its value. The ``<label>`` component is the
-manual alternative of displaying the label of a field. Possible attributes are:
+manual alternative of displaying the label of a field. ``<label>`` can have the
+following attributes:
 
 :for:
   string_ (mandatory)
@@ -317,7 +321,7 @@ manual alternative of displaying the label of a field. Possible attributes are:
   ``oe_stat_button`` define a particular rendering in order to
   dynamically display information while being clickable to target an
   action.
-  
+
   .. code-block:: xml
 
     <button type="object" name="ACTION" class="oe_stat_button" icon="FONT_AWESOME" help="HELP">
@@ -405,7 +409,7 @@ Structural components
 ---------------------
 
 Structural components provide structure or "visual" features with little
-logic. They are used as elements or sets of elements in form views. 
+logic. They are used as elements or sets of elements in form views.
 Placeholders are denoted in all caps.
 
 .. _reference/user_interface/views/form/group:
@@ -617,7 +621,7 @@ Below is an example with the status widget with some options.
 Display button at the bottom of the dialog. Used with :ref:`buttons <reference/user_interface/views/form/button>`
 
 The special action from ``<button>`` can save or cancel the form view displayed into the
-dialog. 
+dialog.
 
 .. code-block:: xml
 

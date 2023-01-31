@@ -2,7 +2,27 @@ List
 ====
 
 The root element of list views is ``<tree>``\ [#treehistory]_. The list view's
-root can have the following attributes:
+root can have the following attributes_:
+
+:string:
+  string_ (optional)
+
+  View name
+
+:create:
+  boolean_ (optional)
+
+  Disable/enable record creation on the view.
+
+:edit:
+  boolean_ (optional)
+
+  Disable/enable record editing on the view.
+
+:delete:
+  boolean_ (optional)
+
+  Disable/enable record deletion on the view through the **Action** dropdown.
 
 .. rst-class:: o-definition-list
 
