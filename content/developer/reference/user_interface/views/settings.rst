@@ -55,7 +55,7 @@ delimiter when searching. ``<app>`` can have the following attributes:
 
 :string:
   string_
-  
+
   The "display" name of the application.
 
 :name:

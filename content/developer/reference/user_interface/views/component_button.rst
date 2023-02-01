@@ -1,10 +1,3 @@
-.. code-block:: xml
-
-    <form>
-      <button type="object" name="ACTION" string="LABEL"/>
-      <button type="object" name="ACTION" icon="FONT_AWESOME"/>
-    </form>
-
 ``<button>`` can have the following attributes:
 
 :icon:
@@ -77,13 +70,13 @@
   see ``type``
 
 :groups:
-  same as for :ref:`field <reference/user_interface/views/form/field>` component.
+  same as for :ref:`form field <reference/user_interface/views/form/field>` component.
 
 :invisible:
-  same as for :ref:`field <reference/user_interface/views/form/field>` component.
+  same as for :ref:`form field <reference/user_interface/views/form/field>` component.
 
 :class:
-  same as for :ref:`field <reference/user_interface/views/form/field>` component.
+  same as for :ref:`form field <reference/user_interface/views/form/field>` component.
 
 
 .. _`python expression`: https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not

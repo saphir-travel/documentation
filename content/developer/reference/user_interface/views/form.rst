@@ -76,7 +76,7 @@ the behavior is not guaranteed when several fields exist with different values
 for modifier 'required'. ``<field>`` can have the following attributes:
 
 :name:
-  string_ (mandatory)
+  string_ :ref:`model <reference/orm/model>` field name (mandatory)
 
   the name of the field to render
 
@@ -312,6 +312,13 @@ following attributes:
 <button>: displays button to call action
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. code-block:: xml
+
+  <form>
+    <button type="object" name="ACTION" string="LABEL"/>
+    <button type="object" name="ACTION" icon="FONT_AWESOME"/>
+  </form>
+
 .. include:: views/component_button.rst
 
 :class:
@@ -455,33 +462,35 @@ Children are laid out horizontally (tries to fill the next column before changin
 
 Below is a possible structure and the representation of its rendering.
 
+.. image:: views/form_group.svg
+  :class: float-md-end
+  :width: 60%
+
 .. code-block:: xml
 
   <group>
-    <field name="FIELD_NAME"/>
-    <field name="FIELD_NAME"/>
+    <field name="a" string="custom"/>
+    <field name="b"/>
   </group>
-  <group string="TITLE">
-    <group string="TITLE">
-      <field name="FIELD_NAME"/>
-      <field name="FIELD_NAME"/>
+  <group string="title 1">
+    <group string="title 2">
+      <field name="c"/>
+      <field name="d"/>
     </group>
     <group>
-      <field name="FIELD_NAME"/>
-      <field name="FIELD_NAME"/>
-      <field name="FIELD_NAME"/>
+      <field name="e"/>
+      <field name="f"/>
+      <field name="g"/>
     </group>
   </group>
   <group col="12">
     <group colspan="8">
-      <field name="FIELD_NAME"/>
+      <field name="h"/>
     </group>
     <group colspan="4">
-      <field name="FIELD_NAME"/>
+      <field name="i"/>
     </group>
   </group>
-
-.. image:: views/form_group.svg
 
 .. _reference/user_interface/views/form/sheet:
 
@@ -508,10 +517,7 @@ form layout. Usually it contains :ref:`<group> <reference/user_interface/views/f
 
   <form>
     <notebook>
-      <page string="Page1">
-        ...
-      </page>
-      <page string="Page2">
+      <page string="LABEL">
         ...
       </page>
     </notebook>
@@ -529,6 +535,25 @@ child element. ``<page>`` can have the following attributes:
   same as for :ref:`field <reference/user_interface/views/form/field>` component.
 
   Can be apply on ``notebook`` and ``page`` nodes.
+
+Below is a possible structure and the representation of its rendering.
+
+.. image:: views/form_notebook.svg
+  :class: float-md-end
+  :width: 60%
+
+.. code-block:: xml
+
+  <form>
+    <notebook>
+      <page string="Page1">
+        ...
+      </page>
+      <page string="Page2">
+        ...
+      </page>
+    </notebook>
+  </form>
 
 .. note:: Note that ``notebook`` should not be placed within ``group``
 
@@ -551,6 +576,23 @@ only useful within :ref:`<group> <reference/user_interface/views/form/group>`
 elements, ends the current row early and immediately switches to a new row
 (without filling any remaining column beforehand)
 
+Below is a possible structure and the representation of its rendering.
+
+.. image:: views/form_newline.svg
+  :class: float-md-end
+  :width: 60%
+
+.. code-block:: xml
+
+  <form>
+    <group string="Title 1">
+      <group string="Title 1.1">...</group>
+      <newline/>
+      <group string="Title 1.2">...</group>
+      <group string="Title 1.3">...</group>
+    </group>
+  </form>
+
 .. _reference/user_interface/views/form/separator:
 
 <separator>: horizontal spacing
@@ -570,6 +612,31 @@ small horizontal spacing. ``<separator>`` can have the following attributes:
   string_
 
   the title as a section title
+
+Below is a possible structure and the representation of its rendering.
+
+.. image:: views/form_separator.svg
+  :class: float-md-end
+  :width: 60%
+
+.. code-block:: xml
+
+  <form>
+    <group>
+      <FIELD/>
+      <separator string="Title 1"/>
+      <FIELD/>
+      <group>
+        <FIELD/>
+        <separator string="Title 2"/>
+        <FIELD/>
+      </group>
+      <group>
+        <FIELD/>
+        <FIELD/>
+      </group>
+    </group>
+  </form>
 
 .. _reference/user_interface/views/form/header:
 
