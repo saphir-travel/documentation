@@ -33,13 +33,10 @@ additional tags: ``app``, ``block`` and ``setting``.
           </block>
       </app>
 
-Components
-----------
-
 .. _reference/user_interface/views/settings/app:
 
 <app>: declare the application
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------
 
 .. code-block:: xml
 
@@ -78,7 +75,7 @@ delimiter when searching. ``<app>`` can have the following attributes:
 .. _reference/user_interface/views/settings/block:
 
 <block>: declare a group of settings
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------
 
 .. code-block:: xml
 
@@ -115,7 +112,7 @@ a title and a description/help. ``<block>`` can have the following attributes:
 .. _reference/user_interface/views/settings/setting:
 
 <setting>: declare the setting
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------
 
 .. code-block:: xml
 

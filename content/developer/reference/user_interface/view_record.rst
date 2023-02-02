@@ -91,7 +91,7 @@ View objects expose a number of fields. They are optional unless specified other
   Most Odoo view names start with the name of the addon and end with the type of view being discussed.
 
 :model:
-  :class:`~odoo.fields.Char`  (mandatory)
+  :class:`~odoo.fields.Char` (mandatory)
 
   The model linked to the view, if applicable.
 

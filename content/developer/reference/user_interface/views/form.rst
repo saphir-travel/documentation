@@ -16,37 +16,37 @@ components.
 Optional attributes_ are added on root element ``<form>`` to customize the view.
 
 :string:
-  string_ (optional)
+  string_
 
   View name
 
 :create:
-  boolean_ (optional)
+  boolean_
 
   Disable/enable record creation on the view.
 
 :edit:
-  boolean_ (optional)
+  boolean_
 
   Disable/enable record editing on the view.
 
 :duplicate:
-  boolean_ (optional)
+  boolean_
 
   Disable/enable record duplication on the view through the **Action** dropdown.
 
 :delete:
-  boolean_ (optional)
+  boolean_
 
   Disable/enable record deletion on the view through the **Action** dropdown.
 
 :js_class:
-  string_ (optional)
+  string_
 
   Name of the javascript class to use when instantiating the view.
 
 :disable_autofocus:
-  boolean_ (optional)
+  boolean_
 
   Disable automatic focus of the first field in the view.
 
@@ -147,20 +147,20 @@ for modifier 'required'. ``<field>`` can have the following attributes:
   `python expression`_ that defines a boolean_
 
   standard dynamic attributes based on record values. If the value is
-  trully or the result is trully, display the field in both readonly
-  and edit mode, but never make it editable.
+  trully or if the evaluate expression is trully, display the field in both
+  readonly and edit mode, but never make it editable.
 
   .. code-block:: xml
 
     <field name="fname_a" readonly="True"/>
-    <field name="fname_b" readonly="fname_c != 3 and fname_a == parent.fname_d"/>
+    <field name="fname_b" readonly="name_a in [fname_b, parent.fname_d]"/>
 
 :required:
   `python expression`_ that defines a boolean_
 
   standard dynamic attributes based on record values. If the value is
-  trully or the result is trully, generates an error and prevents
-  saving the record if the field doesn't have a value
+  trully or if the evaluate expression is trully, generates an error and
+  prevents saving the record if the field doesn't have a value.
 
   .. code-block:: xml
 
@@ -171,7 +171,7 @@ for modifier 'required'. ``<field>`` can have the following attributes:
   `python expression`_ that defines a boolean_
 
   standard dynamic attributes based on record values. Hide the field
-  if trully or if the result is trully
+  if trully or if the evaluate expression is trully.
 
   .. code-block:: xml
 
@@ -462,35 +462,37 @@ Children are laid out horizontally (tries to fill the next column before changin
 
 Below is a possible structure and the representation of its rendering.
 
-.. image:: views/form_group.svg
-  :class: float-md-end
-  :width: 60%
+.. container:: row
 
-.. code-block:: xml
+  .. code-block:: xml
+    :class: col-xxl-6
 
-  <group>
-    <field name="a" string="custom"/>
-    <field name="b"/>
-  </group>
-  <group string="title 1">
-    <group string="title 2">
-      <field name="c"/>
-      <field name="d"/>
-    </group>
     <group>
-      <field name="e"/>
-      <field name="f"/>
-      <field name="g"/>
+      <field name="a" string="custom"/>
+      <field name="b"/>
     </group>
-  </group>
-  <group col="12">
-    <group colspan="8">
-      <field name="h"/>
+    <group string="title 1">
+      <group string="title 2">
+        <field name="c"/>
+        <field name="d"/>
+      </group>
+      <group>
+        <field name="e"/>
+        <field name="f"/>
+        <field name="g"/>
+      </group>
     </group>
-    <group colspan="4">
-      <field name="i"/>
+    <group col="12">
+      <group colspan="8">
+        <field name="h"/>
+      </group>
+      <group colspan="4">
+        <field name="i"/>
+      </group>
     </group>
-  </group>
+
+  .. image:: views/form_group.svg
+    :class: col-xxl-6
 
 .. _reference/user_interface/views/form/sheet:
 
@@ -524,7 +526,9 @@ form layout. Usually it contains :ref:`<group> <reference/user_interface/views/f
   </form>
 
 ``notebook`` defines a tabbed section. Each tab is defined through a ``page``
-child element. ``<page>`` can have the following attributes:
+child element.
+
+``<page>`` can have the following attributes:
 
 :string:
   string_ (required)
@@ -538,22 +542,24 @@ child element. ``<page>`` can have the following attributes:
 
 Below is a possible structure and the representation of its rendering.
 
-.. image:: views/form_notebook.svg
-  :class: float-md-end
-  :width: 60%
+.. container:: row
 
-.. code-block:: xml
+  .. code-block:: xml
+    :class: col-xxl-6
 
-  <form>
-    <notebook>
-      <page string="Page1">
-        ...
-      </page>
-      <page string="Page2">
-        ...
-      </page>
-    </notebook>
-  </form>
+    <form>
+      <notebook>
+        <page string="Page1">
+          ...
+        </page>
+        <page string="Page2">
+          ...
+        </page>
+      </notebook>
+    </form>
+
+  .. image:: views/form_notebook.svg
+    :class: col-xxl-6
 
 .. note:: Note that ``notebook`` should not be placed within ``group``
 
@@ -578,20 +584,22 @@ elements, ends the current row early and immediately switches to a new row
 
 Below is a possible structure and the representation of its rendering.
 
-.. image:: views/form_newline.svg
-  :class: float-md-end
-  :width: 60%
+.. container:: row
 
-.. code-block:: xml
+  .. code-block:: xml
+    :class: col-xxl-6
 
-  <form>
-    <group string="Title 1">
-      <group string="Title 1.1">...</group>
-      <newline/>
-      <group string="Title 1.2">...</group>
-      <group string="Title 1.3">...</group>
-    </group>
-  </form>
+    <form>
+      <group string="Title 1">
+        <group string="Title 1.1">...</group>
+        <newline/>
+        <group string="Title 1.2">...</group>
+        <group string="Title 1.3">...</group>
+      </group>
+    </form>
+
+  .. image:: views/form_newline.svg
+    :class: col-xxl-6
 
 .. _reference/user_interface/views/form/separator:
 
@@ -615,28 +623,30 @@ small horizontal spacing. ``<separator>`` can have the following attributes:
 
 Below is a possible structure and the representation of its rendering.
 
-.. image:: views/form_separator.svg
-  :class: float-md-end
-  :width: 60%
+.. container:: row
 
-.. code-block:: xml
+  .. code-block:: xml
+    :class: col-xxl-6
 
-  <form>
-    <group>
-      <FIELD/>
-      <separator string="Title 1"/>
-      <FIELD/>
+    <form>
       <group>
         <FIELD/>
-        <separator string="Title 2"/>
+        <separator string="Title 1"/>
         <FIELD/>
+        <group>
+          <FIELD/>
+          <separator string="Title 2"/>
+          <FIELD/>
+        </group>
+        <group>
+          <FIELD/>
+          <FIELD/>
+        </group>
       </group>
-      <group>
-        <FIELD/>
-        <FIELD/>
-      </group>
-    </group>
-  </form>
+    </form>
+
+  .. image:: views/form_separator.svg
+    :class: col-xxl-6
 
 .. _reference/user_interface/views/form/header:
 
@@ -706,14 +716,34 @@ container for buttons
 .. code-block:: xml
 
     <form>
-      <sheet>
-        <div class="oe_button_box">
-          <BUTTONS/>
-        </div>
-      </sheet>
+      <div name="button_box">
+        <BUTTONS/>
+      </div>
     <form>
 
 Container for specific rendering to display :ref:`buttons <reference/user_interface/views/form/button>`
+
+.. container:: row
+
+  .. code-block:: xml
+    :class: col-xxl-6
+
+    <form>
+      <div name="button_box">
+        <button type="edit" name="edit"
+            icon="fa-edit" string="Button1"/>
+
+        <button type="object" name="my_action"
+            icon="fa-dollar">
+          <field name="total_inv" widget="statinfo"
+              string="Invoices"/>
+        </button>
+      </div>
+      ...
+    <form>
+
+  .. image:: views/form_button_box.svg
+    :class: col-xxl-6
 
 container for a title
 ~~~~~~~~~~~~~~~~~~~~~

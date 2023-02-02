@@ -50,21 +50,34 @@ take the following attributes_:
 ``color``
   name of the field used to color the pills according to its value
 ``decoration-{$name}``
-    allow changing the style of a row's text based on the corresponding
-    record's attributes.
+  `python expression`_ that defines a boolean_
 
-    Values are Python expressions. For each record, the expression is evaluated
-    with the record's attributes as context values and if ``true``, the
-    corresponding style is applied to the row. Here are some of the other values
-    available in the context:
+  allow changing the style of a cell's text based on the corresponding
+  record's attributes.
 
-    * ``uid``: the id of the current user,
-    * ``today``: the current local date as a string of the form ``YYYY-MM-DD``,
-    * ``now``: same as ``today`` with the addition of the current time.
-      This value is formatted as ``YYYY-MM-DD hh:mm:ss``.
+  ``{$name}`` can be one of the following `bootstrap contextual color`_ (``danger``,
+  ``info``, ``secondary``, ``success`` or ``warning``).
 
-    ``{$name}`` can be one of the following `bootstrap contextual color`_ (``danger``,
-    ``info``, ``secondary``, ``success`` or ``warning``).
+  Define a conditional display of a record in the style of a row's text based on the corresponding
+  record's attributes.
+
+  Values are Python expressions. For each record, the expression is evaluated
+  with the record's attributes as context values and if ``true``, the
+  corresponding style is applied to the row. Here are some of the other values
+  available in the context:
+
+  * ``uid``: the id of the current user,
+  * ``today``: the current local date as a string of the form ``YYYY-MM-DD``,
+  * ``now``: same as ``today`` with the addition of the current time.
+    This value is formatted as ``YYYY-MM-DD hh:mm:ss``.
+
+  .. code-block:: xml
+
+    <gantt decoration-info="state == 'draft'"
+          decoration-danger="state == 'help_needed'"
+          decoration-bf="state == 'busy'">
+      ...
+    </gantt>
 ``default_group_by``
   name of a field to group tasks by
 ``disable_drag_drop``
