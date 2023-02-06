@@ -100,7 +100,7 @@ for modifier 'required'. ``<field>`` can have the following attributes:
     <field name="tag_ids" widget="many2many_tags"/>
 
 :options:
-  `python expression`_ that defines a dict_
+  :ref:`python expression <user_interface/views/python_expression>` that defines a dict_
 
   JSON object specifying configuration option for the field's widget
   (including default widgets)
@@ -119,7 +119,7 @@ for modifier 'required'. ``<field>`` can have the following attributes:
     <field name="fname" groups="base.group_no_one,!base.group_multi_company"/>
 
 :domain:
-  `python expression`_ that defines a :ref:`reference/orm/domains`
+  :ref:`python expression <user_interface/views/python_expression>` that defines a :ref:`reference/orm/domains`
 
   for relational fields only, filters to apply when displaying existing
   records for selection
@@ -129,7 +129,7 @@ for modifier 'required'. ``<field>`` can have the following attributes:
     <field name="fname_id" domain="[('fname_a', '=', parent.fname_b)]"/>
 
 :context:
-  `python expression`_ that defines a dict_
+  :ref:`python expression <user_interface/views/python_expression>` [#python_expression] that defines a dict_
 
   for relational fields only, context to pass when fetching possible values
 
@@ -144,7 +144,7 @@ for modifier 'required'. ``<field>`` can have the following attributes:
       }"/>
 
 :readonly:
-  `python expression`_ that defines a boolean_
+  :ref:`python expression <user_interface/views/python_expression>` that defines a boolean_
 
   standard dynamic attributes based on record values. If the value is
   trully or if the evaluate expression is trully, display the field in both
@@ -156,7 +156,7 @@ for modifier 'required'. ``<field>`` can have the following attributes:
     <field name="fname_b" readonly="name_a in [fname_b, parent.fname_d]"/>
 
 :required:
-  `python expression`_ that defines a boolean_
+  :ref:`python expression <user_interface/views/python_expression>` that defines a boolean_
 
   standard dynamic attributes based on record values. If the value is
   trully or if the evaluate expression is trully, generates an error and
@@ -168,7 +168,7 @@ for modifier 'required'. ``<field>`` can have the following attributes:
     <field name="fname_b" required="fname_c != 3 and fname_a == parent.fname_d"/>
 
 :invisible:
-  `python expression`_ that defines a boolean_
+  :ref:`python expression <user_interface/views/python_expression>` that defines a boolean_
 
   standard dynamic attributes based on record values. Hide the field
   if trully or if the evaluate expression is trully.
@@ -769,7 +769,6 @@ Container for specific rendering to display a :ref:`<field> <reference/user_inte
 .. _`HTML class`: https://en.wikipedia.org/wiki/HTML_attribute
 .. _accesskey: https://www.w3.org/TR/html5/editing.html#the-accesskey-attribute
 .. _floats: https://developer.mozilla.org/en-US/docs/Web/CSS/float
-.. _`python expression`: https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not
 .. _`relative path`: https://en.wikipedia.org/wiki/URL
 .. _path: https://en.wikipedia.org/wiki/Path_(computing)
 .. _`Comma-separated values`: https://en.wikipedia.org/wiki/Comma-separated_values

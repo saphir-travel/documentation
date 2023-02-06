@@ -74,10 +74,18 @@ an impact on all view types.
 
 .. note:: The current context and user access rights may also impact the view abilities.
 
+.. _user_interface/views/python_expression:
+
 .. note::
-    In the views architecture, some XML node attributes can use `python expression`_, in
-    this case this expression is evaluated with the values of the current view. In case
-    of nested view, the magic value `parent` refere to the values from container view.
+    In the views architecture, some XML node attributes canuse `python expression`_,
+    in this case this expression is evaluated with the field values of the current view
+    and this other values:
+
+    * ``context``: dict_ with the values of the current view context;
+    * ``uid``: integer_ the id of the current user;
+    * ``today``: string_ the current local date as a string of the form ``YYYY-MM-DD``;
+    * ``now``: string_ same as ``today`` with the addition of the current time. This value is formatted as ``YYYY-MM-DD hh:mm:ss``;
+    * ``parent``: The properties of this "object" refere to the container view values. This magic object is only available for the subviews of :ref:`relational fields <studio/fields/relational-fields>`.
 
 .. include:: views/include/form.rst
 .. include:: views/include/settings.rst
@@ -94,3 +102,8 @@ an impact on all view types.
 .. include:: views/include/grid.rst
 .. include:: views/include/gantt.rst
 .. include:: views/include/map.rst
+
+.. _`python expression`: https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not
+.. _dict: https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
+.. _integer: https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex
+.. _string: https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str

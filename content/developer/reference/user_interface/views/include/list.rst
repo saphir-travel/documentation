@@ -95,7 +95,7 @@ root can have the following attributes_:
     </tree>
 
 :decoration-{$name}:
-  `python expression`_ that defines a boolean_
+  :ref:`python expression <user_interface/views/python_expression>` that defines a boolean_
 
   allow changing the style of a cell's text based on the corresponding
   record's attributes.
@@ -104,18 +104,10 @@ root can have the following attributes_:
   (``font-style: italic``), or any `bootstrap contextual color`_ (``danger``,
   ``info``, ``muted``, ``primary``, ``success`` or ``warning``).
 
-  Define a conditional display of a record in the style of a row's text based on the corresponding
-  record's attributes.
-
-  Values are Python expressions. For each record, the expression is evaluated
-  with the record's attributes as context values and if ``true``, the
-  corresponding style is applied to the row. Here are some of the other values
-  available in the context:
-
-  * ``uid``: the id of the current user,
-  * ``today``: the current local date as a string of the form ``YYYY-MM-DD``,
-  * ``now``: same as ``today`` with the addition of the current time.
-    This value is formatted as ``YYYY-MM-DD hh:mm:ss``.
+  Define a conditional display of a record in the style of a row's text based
+  on the corresponding record's attributes. For each record, the expression is
+  evaluated with the record's attributes as context values and if ``true``, the
+  corresponding style is applied to the row.
 
   .. code-block:: xml
 
@@ -181,7 +173,7 @@ each record. Can use the following attributes:
     <field name="fname_a" optional="hide"/>
 
 :readonly:
-  `python expression`_ that defines a boolean_
+  :ref:`python expression <user_interface/views/python_expression>` that defines a boolean_
 
   standard dynamic attributes based on record values. If the value is trully
   or if the evaluate expression is trully, display the field in both readonly
@@ -193,7 +185,7 @@ each record. Can use the following attributes:
     <field name="fname_b" readonly="name_a in [fname_b, parent.fname_d]"/>
 
 :required:
-  `python expression`_ that defines a boolean_
+  :ref:`python expression <user_interface/views/python_expression>` that defines a boolean_
 
   standard dynamic attributes based on record values. If the value is trully
   or if the evaluate expression is trully, generates an error and prevents
@@ -205,7 +197,7 @@ each record. Can use the following attributes:
     <field name="fname_b" required="fname_c != 3 and fname_a == parent.fname_d"/>
 
 :invisible:
-  `python expression`_ that defines a boolean_
+  :ref:`python expression <user_interface/views/python_expression>` that defines a boolean_
 
   standard dynamic attributes based on record values. Hide the field if trully
   or if the evaluate expression is trully.
@@ -220,7 +212,7 @@ each record. Can use the following attributes:
     <field name="fname_b" invisible="fname_c != 3 and fname_a == parent.fname_d"/>
 
 :column_invisible:
-  `python expression`_ that defines a boolean_
+  :ref:`python expression <user_interface/views/python_expression>` that defines a boolean_
 
   Fetches and stores the field, but doesn't display the column in the table.
   Necessary for fields which shouldn't be displayed but are used by e.g.
@@ -247,7 +239,7 @@ each record. Can use the following attributes:
     <field name="fname" groups="base.group_no_one,!base.group_multi_company"/>
 
 :decoration-{$name}:
-  `python expression`_ that defines a boolean_
+  :ref:`python expression <user_interface/views/python_expression>` that defines a boolean_
 
   allow changing the style of a cell's text based on the corresponding
   record's attributes.
@@ -527,7 +519,7 @@ It can have the following attributes:
   The text displayed on the button.
 
 :context:
-  `python expression`_ that defines a dict_
+  :ref:`python expression <user_interface/views/python_expression>` that defines a dict_
 
   This context will be merged into the existing context
   when retrieving the default value of the new record.
@@ -559,7 +551,7 @@ Below is a possible structure and the representation of its rendering.
     :class: col-xxl-6
 
 .. note:: ``<control>`` makes sense if the parent ``tree`` view is inside a
-  :class:`~odoo.fields.One2many` :ref:`field <reference/user_interface/views/form/field>`.
+  :class:`~odoo.fields.One2many` :ref:`relational field <studio/fields/relational-fields>`.
 
   If any ``<create>`` is defined as children, it will overwrite the default
   "**add a line**" button.
@@ -569,7 +561,6 @@ Below is a possible structure and the representation of its rendering.
 
 
 .. _attributes: https://en.wikipedia.org/wiki/HTML_attribute
-.. _`python expression`: https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not
 .. _bootstrap contextual color: https://getbootstrap.com/docs/3.3/components/#available-variations
 .. _`Comma-separated values`: https://en.wikipedia.org/wiki/Comma-separated_values
 .. _integer: https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex
