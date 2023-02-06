@@ -573,3 +573,4 @@ Below is a possible structure and the representation of its rendering.
 .. _integer: https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex
 .. _string: https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str
 .. _boolean: https://docs.python.org/3/library/stdtypes.html#boolean-values
+.. _dict: https://docs.python.org/3/library/stdtypes.html#mapping-types-dict

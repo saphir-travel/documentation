@@ -104,3 +104,7 @@ Model Commons
 .. currentmodule:: odoo.addons.base.models.ir_ui_view
 .. autoattribute:: Model._date_name
     :noindex:
+
+.. _attributes: https://en.wikipedia.org/wiki/HTML_attribute
+.. _boolean: https://docs.python.org/3/library/stdtypes.html#boolean-values
+.. _string: https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str

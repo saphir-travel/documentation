@@ -219,3 +219,6 @@ take the following attributes_:
 
 
 .. _bootstrap contextual color: https://getbootstrap.com/docs/3.3/components/#available-variations
+.. _`python expression`: https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not
+.. _boolean: https://docs.python.org/3/library/stdtypes.html#boolean-values
+.. _string: https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str

@@ -206,3 +206,6 @@ If you need to extend the Kanban view, see :js:class:`KanbanRecord`.
 
 .. _kanban board: https://en.wikipedia.org/wiki/Kanban_board
 .. _KanbanExamplesRegistry: https://github.com/odoo/odoo/blob/99821fdcf89aa66ac9561a972c6823135ebf65c0/addons/web/static/src/js/views/kanban/kanban_examples_registry.js
+.. _attributes: https://en.wikipedia.org/wiki/HTML_attribute
+.. _boolean: https://docs.python.org/3/library/stdtypes.html#boolean-values
+.. _string: https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str
