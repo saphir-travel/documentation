@@ -1,3 +1,5 @@
+.. _reference/user_interface/views/form:
+
 Form
 ====
 
@@ -317,7 +319,7 @@ following attributes:
     <button type="object" name="ACTION" icon="FONT_AWESOME"/>
   </form>
 
-.. include:: views/component_button.rst
+.. include:: views/include/component_button.rst
 
 :class:
   string_ `HTML class`_

@@ -1,3 +1,5 @@
+.. _reference/user_interface/views/search:
+
 Search
 ======
 
@@ -307,7 +309,7 @@ Possible children elements of the search view are:
 .. _reference/user_interface/views/search/defaults:
 
 Search defaults
-~~~~~~~~~~~~~~~
+---------------
 
 Search fields and filters can be configured through the action's ``context``
 using :samp:`search_default_{name}` keys. For fields, the value should be the

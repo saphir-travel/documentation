@@ -17,10 +17,10 @@
   <rect x="10" y="10" width="636" height="240" stroke-width="1"/>
   <rect x="10" y="10" width="636" height="25" fill="url(#diagonalHatch)" stroke-width="1"/>
   <rect x="17" y="17" width="10" height="10" stroke-width="1"/>
-  <text x="40" y="28" fill="#888888">My Custom Name</text>
-  <text x="330" y="28" fill="#888888">Amount</text>
-  <text x="440" y="28" fill="#888888">Currency</text>
-  <text x="560" y="28" fill="#888888">Tax</text>
+  <text x="40" y="28" fill="#495057">My Custom Name</text>
+  <text x="330" y="28" fill="#495057">Amount</text>
+  <text x="440" y="28" fill="#495057">Currency</text>
+  <text x="560" y="28" fill="#495057">Tax</text>
 
   <rect transform="translate(0 40)" width="700" height="28" fill="url(#line)"/>
   <rect transform="translate(0 70)" width="700" height="28" fill="url(#line)"/>
@@ -29,6 +29,6 @@
   <rect transform="translate(0 160)" width="700" height="28" fill="url(#line)"/>
 
   <rect x="10" y="225" width="636" height="25" fill="url(#diagonalHatch)" stroke-width="1"/>
-  <text x="335" y="243" fill="#888888">123.45 €</text>
+  <text x="335" y="243" fill="#495057">123.45 €</text>
 </g>
 </svg>

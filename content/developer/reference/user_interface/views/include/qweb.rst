@@ -1,3 +1,5 @@
+.. _reference/user_interface/views/qweb:
+
 QWeb
 ====
 

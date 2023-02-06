@@ -1,3 +1,5 @@
+.. _reference/user_interface/views/kanban:
+
 Kanban
 ======
 
@@ -94,7 +96,7 @@ Possible children of the view element are:
     Enables the 'quick create' and 'drag and drop' features when the kanban
     view is grouped by that field. Default: false.
 
-.. include:: header_buttons.rst
+.. include:: views/include/header_buttons.rst
 
 .. note::
 

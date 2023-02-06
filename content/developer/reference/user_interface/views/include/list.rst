@@ -1,3 +1,5 @@
+.. _reference/user_interface/views/list:
+
 List
 ====
 
@@ -372,7 +374,7 @@ Below is a possible structure and the representation of its rendering.
     <button type="object" name="ACTION" icon="FONT_AWESOME"/>
   </tree>
 
-.. include:: views/component_button.rst
+.. include:: views/include/component_button.rst
 
 Below is a possible structure and the representation of its rendering.
 
@@ -475,7 +477,7 @@ group the record by the selected.
     ...
   </tree>
 
-.. include:: header_buttons.rst
+.. include:: views/include/header_buttons.rst
 
 Below is a possible structure and the representation of its rendering.
 

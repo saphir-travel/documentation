@@ -1,3 +1,5 @@
+.. _reference/user_interface/views/map:
+
 Map
 ===
 
@@ -12,14 +14,14 @@ This view is able to display records on a map and the routes between them. The r
     The model on which the view is applied should contain a `res.partner` many2one since the view relies on the `res.partner`'s address and coordinates fields to localize the records.
 
 API
-~~~
+---
 
 The view uses location data platforms' API to fetch the tiles (the map's background), do the geoforwarding (converting addresses to a set of coordinates) and fetch the routes.
 The view implements two API, OpenStreetMap and MapBox. OpenStreetMap is used by default and is able to fetch `tiles`_ and do `geoforwarding`_. This API does not require a token.
 As soon as a valid `MapBox`_ token is provided in the general settings the view switches to the MapBox API. This API is faster and allows the computation of routes. A token can be obtained by `signing up`_ to MapBox.
 
 Structural components
-~~~~~~~~~~~~~~~~~~~~~
+---------------------
 
 The view's root element is ``<map>``. It can have the following attributes:
 

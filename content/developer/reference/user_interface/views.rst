@@ -79,62 +79,18 @@ an impact on all view types.
     this case this expression is evaluated with the values of the current view. In case
     of nested view, the magic value `parent` refere to the values from container view.
 
-.. _reference/user_interface/views/form:
-
-.. include:: views/form.rst
-
-.. _reference/user_interface/views/settings:
-
-.. include:: views/settings.rst
-
-.. _reference/user_interface/views/list:
-
-.. include:: views/list.rst
-
-.. _reference/user_interface/views/search:
-
-.. include:: views/search.rst
-
-.. _reference/user_interface/views/kanban:
-
-.. include:: views/kanban.rst
-
-.. _reference/user_interface/views/qweb:
-
-.. include:: views/qweb.rst
-
-.. _reference/user_interface/views/graph:
-
-.. include:: views/graph.rst
-
-.. _reference/user_interface/views/pivot:
-
-.. include:: views/pivot.rst
-
-.. _reference/user_interface/views/calendar:
-
-.. include:: views/calendar.rst
-
-.. _reference/user_interface/views/activity:
-
-.. include:: views/activity.rst
-
-.. _reference/user_interface/views/dashboard:
-
-.. include:: views/dashboard.rst
-
-.. _reference/user_interface/views/cohort:
-
-.. include:: views/cohort.rst
-
-.. _reference/user_interface/views/grid:
-
-.. include:: views/grid.rst
-
-.. _reference/user_interface/views/gantt:
-
-.. include:: views/gantt.rst
-
-.. _reference/user_interface/views/map:
-
-.. include:: views/map.rst
+.. include:: views/include/form.rst
+.. include:: views/include/settings.rst
+.. include:: views/include/list.rst
+.. include:: views/include/search.rst
+.. include:: views/include/kanban.rst
+.. include:: views/include/qweb.rst
+.. include:: views/include/graph.rst
+.. include:: views/include/pivot.rst
+.. include:: views/include/calendar.rst
+.. include:: views/include/activity.rst
+.. include:: views/include/dashboard.rst
+.. include:: views/include/cohort.rst
+.. include:: views/include/grid.rst
+.. include:: views/include/gantt.rst
+.. include:: views/include/map.rst

@@ -1,3 +1,5 @@
+.. _reference/user_interface/views/grid:
+
 Grid
 ====
 
@@ -6,7 +8,7 @@ Grid
    <span class="badge" style="background-color:#AD5E99">Enterprise feature</span>
 
 Limitations
-~~~~~~~~~~~
+-----------
 
 This view is a work in progress and may have to be expanded or altered.
 
@@ -21,7 +23,7 @@ This view is a work in progress and may have to be expanded or altered.
   those attributes)
 
 Schema
-~~~~~~
+------
 
 The grid view has its own schema and additional validation in this module. The
 view architecture is:
@@ -134,7 +136,7 @@ view architecture is:
     display.
 
 Server interactions
-~~~~~~~~~~~~~~~~~~~
+-------------------
 
 Aside from optional buttons, the grid view currently calls two methods:
 
@@ -195,7 +197,7 @@ Aside from optional buttons, the grid view currently calls two methods:
   and whose semantics are likely to evolve with time and use cases
 
 Server Hooks
-~~~~~~~~~~~~
+------------
 
 ``read_grid`` calls a number of hooks allowing the customisation of its
 operations from within without having to override the entire method:
@@ -237,14 +239,14 @@ operations from within without having to override the entire method:
             ColumnInfo)
 
 ACL
-~~~
+---
 
 * if the view is not editable, individual cells won't be editable
 * if the view is not creatable, the ``Add a Line`` button will not be
   displayed (it currently creates a new empty record)
 
 Context Keys
-~~~~~~~~~~~~
+------------
 
 ``grid_range``
     selects which range should be used by default if the view has multiple

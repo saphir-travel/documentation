@@ -1,3 +1,5 @@
+.. _reference/user_interface/views/calendar:
+
 Calendar
 ========
 
@@ -99,7 +101,7 @@ calendar view are:
 
 
 Model Commons
-~~~~~~~~~~~~~
+-------------
 
 .. currentmodule:: odoo.addons.base.models.ir_ui_view
 .. autoattribute:: Model._date_name
