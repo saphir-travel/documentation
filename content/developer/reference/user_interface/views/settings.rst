@@ -1,5 +1,3 @@
-.. _reference/user_interface/views/settings:
-
 Settings Form View
 ==================
 

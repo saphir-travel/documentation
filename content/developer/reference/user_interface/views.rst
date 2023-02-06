@@ -79,8 +79,12 @@ an impact on all view types.
     this case this expression is evaluated with the values of the current view. In case
     of nested view, the magic value `parent` refere to the values from container view.
 
+.. _reference/user_interface/views/form:
 
 .. include:: views/form.rst
+
+.. _reference/user_interface/views/settings:
+
 .. include:: views/settings.rst
 
 .. _reference/user_interface/views/list:
