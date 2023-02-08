@@ -23,6 +23,9 @@ applications/websites/ecommerce/getting_started/product_page.rst applications/we
 applications/websites/ecommerce/shopper_experience/payment_acquirer.rst applications/websites/ecommerce/shopper_experience/payment_providers.rst # payment_acquirer -> payment_providers
 applications/websites/ecommerce/maximizing_revenue/upselling.rst applications/websites/ecommerce/products/cross_upselling.rst                    # /maximizing_revenue/upselling -> /products/cross_upselling
 applications/websites/ecommerce/maximizing_revenue/cross_selling.rst applications/websites/ecommerce/products/cross_upselling.rst                # /maximizing_revenue/cross_selling -> /products/cross_upselling
+# applications/purchase
+
+applications/inventory_and_mrp/purchase/manage_deals/agreements.rst applications/inventory_and_mrp/purchase/manage_deals/blanket_orders.rst      # agreements.rst -> blanket_orders.rst
 
 # developer/reference/frontend
 
