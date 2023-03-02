@@ -178,6 +178,17 @@ an impact on all view types.
 
 .. todo:: Views main content section, with field, group & separator ?
 
+* ``class``
+  optional string containing some classes to set on the root node of the view.
+
+* ``js_class``
+  optional component class to use to render the view.
+  If set, the ``js_class`` value will also be used to replace the placeholder in
+  the class name ``o_{js_class}_view``, and this modified class name will be
+  applied to the root node of the view. For example, if ``js_class`` is set to
+  ``my-custom-kanban``, the class ``o_my-custom-kanban_view`` will be set on the
+  root node.
+
 .. _reference/views/inheritance:
 
 Inheritance
