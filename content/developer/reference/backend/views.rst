@@ -1270,9 +1270,6 @@ take the following attributes:
 ``total_row``
   boolean to control whether the row containing the total count of records should
   be displayed. (default: ``false``)
-``collapse_first_level``
-  boolean to control whether it is possible to collapse each row if grouped by
-  one field. (default: ``false``, the collapse starts when grouping by two fields)
 ``display_unavailability``
   boolean to mark the dates returned by the ``gantt_unavailability`` function of
   the model as available inside the gantt view. Records can still be scheduled
@@ -1291,21 +1288,11 @@ take the following attributes:
 
 ``templates``
   defines the :ref:`reference/qweb` template ``gantt-popover`` which is used
-  when the user hovers over one of the records in the gantt view.
+  by the popover that is opened when the user click on a record in the gantt view.
 
-  The gantt view uses mostly-standard :ref:`javascript qweb
-  <reference/qweb/javascript>` and provides the following context variables:
-
-  .. rst-class:: o-definition-list
-
-  ``widget``
-    the current :js:class:`GanttRow`, can be used to fetch some
-    meta-information. The ``getColor`` method to convert in a color integer is
-    also available directly in the template context without using ``widget``.
-
-  ``on_create``
-    If specified when clicking the add button on the view, instead of opening a generic dialog, launch a client action.
-    this should hold the xmlid of the action (eg: ``on_create="%(my_module.my_wizard)d"``
+``on_create``
+  If specified when clicking the add button on the view, instead of opening a generic dialog, launch a client action.
+  this should hold the xmlid of the action (eg: ``on_create="%(my_module.my_wizard)d"``
 
 ``form_view_id``
   view to open when the user create or edit a record. Note that if this attribute
