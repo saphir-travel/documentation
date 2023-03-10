@@ -1,6 +1,5 @@
 :nosearch:
 :show-content:
-:hide-page-toc:
 :show-toc:
 
 =======
@@ -13,4 +12,6 @@ Surveys
 .. toctree::
    :titlesonly:
 
-   surveys/overview
+   surveys/create
+   surveys/scoring
+   surveys/time_random
