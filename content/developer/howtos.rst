@@ -9,6 +9,11 @@ How-to guides
     :titlesonly:
 
     howtos/scss_tips
+    howtos/javascript_create_field
+    howtos/javascript_subclass_field
+    howtos/javascript_create_view
+    howtos/javascript_subclass_view
+    howtos/javascript_client_action
     howtos/web_services
     howtos/company
     howtos/accounting_localization
@@ -22,6 +27,31 @@ How-to guides
       :target: howtos/scss_tips
 
       Follow this guide to keep the technical debt of your CSS code under control.
+
+   .. card:: Create a new field component
+      :target: howtos/javascript_create_field
+
+      Learn how to create a new field component in the Odoo JavaScript web framework.
+
+   .. card:: Subclass an existing field component
+      :target: howtos/javascript_subclass_field
+
+      Learn how to subclass a field component in the Odoo JavaScript web framework.
+
+   .. card:: Create a new view
+      :target: howtos/javascript_create_view
+
+      Learn how to create a new view in the Odoo JavaScript web framework.
+
+   .. card::  Subclass an existing view
+      :target: howtos/javascript_subclass_view
+
+      Learn how to subclass an existing view in the Odoo JavaScript web framework.
+
+   .. card:: Create a client action
+      :target: howtos/javascript_client_action
+
+      Learn how to create a client action in the Odoo JavaScript web framework.
 
    .. card:: Web services
       :target: howtos/web_services

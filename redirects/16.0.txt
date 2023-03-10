@@ -43,7 +43,8 @@ developer/howtos/discover_js_framework/05_custom_kanban_view.rst developer/tutor
 developer/howtos/discover_js_framework/06_creating_view_from_scratch.rst developer/tutorials/discover_js_framework/06_creating_view_from_scratch.rst  # reorganize the developer doc
 developer/howtos/discover_js_framework/07_testing.rst developer/tutorials/discover_js_framework/07_testing.rst                                        # reorganize the developer doc
 
+
 # developer/reference/frontend
+developer/reference/frontend/javascript_cheatsheet.rst developer/howtos/javascript_create_field.rst # refactor JavaScript cheatsheet into howtos
 
 developer/reference/frontend/icons_library.rst contributing/development/ui/icons.rst # Odoo UI icons -> UI Icons
-
