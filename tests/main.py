@@ -1,3 +1,4 @@
+from itertools import chain
 import re
 import sys
 from unittest.mock import patch
@@ -13,6 +14,11 @@ CUSTOM_RST_DIRECTIVES = [
     'spoiler',  # spoilers
     'tab', 'tabs', 'group-tab', 'code-tab',  # sphinx_tabs
 ]
+
+def additional_checks(argv=None):
+    _enabled_checkers, args = sphinxlint.parse_args(argv)
+    for path in chain.from_iterable(sphinxlint.walk(path, args.ignore) for path in args.paths):
+        checkers.images.check_image_compression(path)
 
 """
 The following checkers are selected.
@@ -68,4 +74,5 @@ if __name__ == '__main__':
         'sphinxlint.three_dot_directive_re',
         re.compile(rf'\.\.\. {sphinxlint.ALL_DIRECTIVES}::'),
     ):
+        additional_checks()
         sys.exit(sphinxlint.main())
