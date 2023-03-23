@@ -25,4 +25,4 @@ products and increase your average cart sizes.
 
    ecommerce/managing_products
    ecommerce/checkout_payment_shipping
-   ecommerce/ecommerce_management
+   ecommerce/store_management
