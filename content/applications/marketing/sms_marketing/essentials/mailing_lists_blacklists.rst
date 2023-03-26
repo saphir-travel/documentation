@@ -2,10 +2,10 @@
 Mailing lists and blacklists
 ============================
 
-Creating or importing mailing lists in the Odoo database is extremely useful, especially if groups
-of specific people are already aligned with a company (like subscribers to an already-established
-newsletter, for example). Mailing lists are also a great way to get started if a company is
-migrating from another system, and already has a built-in audience.
+Creating or importing mailing lists in Odoo is very useful when curating content to specific groups
+of people that already share similar demographics or interests. Mailing lists are also a great way
+to get started if a company is migrating from another system, and already has a established
+audience.
 
 Moreover, providing an audience with the option to 'unsubscribe' from mailings, helps businesses
 maintain good customer relations, by giving recipients the power to control what they are (and
@@ -18,8 +18,8 @@ In the :guilabel:`SMS Marketing` app, there's an option on the header menu calle
 Lists`. When clicked, a sub-menu is revealed with options for :guilabel:`Mailing Lists` and
 :guilabel:`Mailing List Contacts`.
 
-Click :guilabel:`Mailing Lists --> Mailing Lists` to see an overview of all mailing lists in the
-database.
+Click :menuselection:`Mailing Lists --> Mailing Lists` to see an overview of all mailing lists in
+the database.
 
 .. image:: mailing_lists_blacklists/mailing-list-main-page.png
    :align: center
@@ -29,7 +29,7 @@ To edit any existing list, select the desired list from the :guilabel:`Mailing L
 proceed to modify it in a number of ways.
 
 To create a new mailing list, click :guilabel:`Create` in the upper left corner of the
-:guilabel:`Mailing Lists` page. Doing so, will reveal a blank mailing list template pop-up.
+:guilabel:`Mailing Lists` page. Doing so, will reveal a blank mailing list template form.
 
 .. image:: mailing_lists_blacklists/sms-mailing-list-popup.png
    :align: center
@@ -43,19 +43,18 @@ page`. Doing so allows users to update their subscription preferences at any tim
    Checking the :guilabel:`Is Public` box is not required, but is recommended to maintain good
    customer relations.
 
-When those fields are filled in, click :guilabel:`Create`, and Odoo removes the pop-up. Then, Odoo
-returns to the main :guilabel:`Mailing Lists` page, where there is now a new, accessible list for
-the mailing list that was just created.
+When those fields are filled in, click :guilabel:`Create` to finalize the form. Then on the main
+:guilabel:`Mailing Lists` dashboard, the new mailing list that was just created will be accessible.
 
-As mentioned before, to edit (and customize) the mailing list further, select the mailing list from
-the main :guilabel:`Mailing Lists` page, and Odoo reveals the mailing list detail form.
+To edit or customize the mailing list further, select the mailing list from the main
+:guilabel:`Mailing Lists` page to reveal the mailing list detail form.
 
 Along the top of the mailing list detail form, there are various analytical smart buttons displaying
 statistics for different metrics related to the mailing list (e.g. :guilabel:`Recipients`,
 :guilabel:`Mailings`, etc.).
 
-To take a closer look at (or make changes to) any of those elements, click the desired smart button,
-and Odoo reveals a separate page with in-depth data associated with the mailing list.
+To review or edit any of those elements, click the desired smart button to reveal a separate page
+with in-depth data associated with the mailing list.
 
 To make changes to the mailing list itself, click the :guilabel:`Edit` button in the upper-left
 corner of the mailing list detail form.
@@ -70,9 +69,9 @@ corner of the mailing list detail form.
 Mailing lists contacts
 ======================
 
-If :guilabel:`Mailing List Contacts` is selected from the :guilabel:`Mailing Lists` header drop-down
-menu, Odoo reveals a separate page with all the contacts associated with one (or more) of the
-configured mailing lists in the database.
+Access contacts information from one or more mailing lists navigate to :menuselection:`Mailing Lists
+--> Mailing List Contacts` to reveal a dashboard with with all the contacts associated with one or
+more of the configured mailing lists in the database.
 
 .. image:: mailing_lists_blacklists/mailing-list-contacts-page.png
    :align: center
@@ -86,14 +85,14 @@ configured mailing lists in the database.
 Communication history in the Chatter
 ------------------------------------
 
-An accessible record of the sent mailings is kept on each recipient's :guilabel:`Chatter`, located
-beneath a recipient's contact form (in the :guilabel:`Contacts` application).
+An accessible record of every sent mailing(s) is kept on each recipient's *chatter* section, located
+beneath a recipient's contact form (in the *Contacts* application).
 
-Database users can reference the :guilabel:`Chatter` to easily keep track of communications, and see
-a history of interactions with contacts and prospects.
+Database users can reference the chatter to easily keep track of communications, and see a history
+of interactions with contacts and prospects.
 
-For example, sales representatives can use the :guilabel:`Chatter` to quickly find out which SMS
-mailing promotions a certain customer has received (or not received).
+For example, sales representatives can use the chatter to quickly find out which :abbr:`SMS (Short
+Message Service)` mailing promotions a certain customer has received (or not received).
 
 .. image:: mailing_lists_blacklists/sms-marketing-chatter.png
    :align: center
@@ -102,44 +101,44 @@ mailing promotions a certain customer has received (or not received).
 Blacklist
 =========
 
-:guilabel:`Odoo SMS Marketing` has a :guilabel:`Blacklist` feature that provides recipients with the
-power to add their phone number to a list of people who no longer want to receieve communications or
+Odoo *SMS Marketing* has a :guilabel:`Blacklist` feature that provides recipients with the power to
+add their phone number to a list of people who no longer want to receieve communications or
 mailings.
 
-This is also known as the "Unsubscribe Process." Customers will automatically be added onto the
-:guilabel:`Blacklist`, if they click :guilabel:`Unsubscribe`, via their :guilabel:`Subscription
-Management Page`. Customers can also be added manually to the blacklist, if necessary.
+This is also known as the unsubscribe process: customers will automatically be added onto a
+*blacklist*, if they click :guilabel:`Unsubscribe`, via their :guilabel:`Subscription Management`
+page. Customers can also be added manually to the blacklist, if necessary.
 
-To see a complete collection of blacklisted numbers, navigate to the :guilabel:`SMS Marketing` app,
-and go to :menuselection:`Configuration --> Blacklisted Phone Numbers`. Doing so, reveals a separate
-page containing every blacklisted phone number in the database.
+To see a complete collection of blacklisted numbers, navigate to the :menuselection:`SMS Marketing
+app --> Configuration --> Blacklisted Phone Numbers` to reveal a dashboard containing every
+blacklisted phone number in the database.
 
 .. image:: mailing_lists_blacklists/sms-blacklist-menu.png
    :align: center
    :alt: SMS Blacklist menu in the application.
 
-To manually add a number, click the :guilabel:`Create` button in the upper-left. When clicked, Odoo
-reveals a separate page, in which the phone number to be blacklisted is entered. There's also a
+To manually add a number to a blacklist, click the :guilabel:`Create` button in the upper-left
+corner of the dashboard and enter the phone number on the next page's form. There's also a
 checkbox to indicate whether that particular phone numnber is :guilabel:`Active` (or not).
 
 .. image:: mailing_lists_blacklists/sms-blacklist-create.png
    :align: center
    :alt: SMS Blacklist menu in the application.
 
-Once the form is completed, click :guilabel:`Save` to add it to the :guilabel:`Blacklist`. To
-remove any number from the :guilabel:`Blacklist`, select the desired number, and click
-:guilabel:`Unblacklist`.
+Once the form is completed, click :guilabel:`Save` to add it to the :guilabel:`Blacklisted Phone
+Numbers` list. To remove any number from the blacklist, select the desired number on the dashboard,
+and then, on the phone number's form, click :guilabel:`Unblacklist`.
 
 Importing blacklists
 --------------------
 
 During a software/platform migration, it is possible to import an already existing blacklist of
-contacts. This would include customers, who have already asked to be :guilabel:`Blacklisted` on SMS
-mailings.
+contacts. This would include customers, who have already asked to be blacklisted` on :abbr:`SMS
+(Short Message Service)` mailings.
 
-To do that, navigate to the :guilabel:`SMS Marketing` app, and go to :menuselection:`Configuration
---> Blacklisted Phone Numbers`. Then, select the :guilabel:`Favorites` drop-down (beneath
-the search bar), and click :guilabel:`Import records`.
+To do that, navigate to :menuselection:`SMS Marketing app --> Configuration --> Blacklisted Phone
+Numbers`, and then select the :guilabel:`Favorites` drop-down menu (beneath the search bar), and
+click :guilabel:`Import records`.
 
 .. image:: mailing_lists_blacklists/import-blacklist.png
    :align: center

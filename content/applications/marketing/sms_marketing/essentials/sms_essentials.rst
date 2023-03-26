@@ -6,9 +6,10 @@ Utilizing :abbr:`SMS (Short Message Service)` outreach in communication strategi
 companies expand their market reach, especially in some countries, where emails might not be very
 common, or even used at all.
 
-Odoo's :guilabel:`SMS Marketing` application can also help boost conversion rates around valuable
-actions, such as event registrations, free trials, purchases, etc., since :abbr:`SMS (Short Message
-Service)` text and mobile-based channels typically have high open-rates.
+Odoo's *SMS Marketing* application can also help boost conversion rates around valuable actions,
+such as event registrations, free trials, purchases, etc., since text and mobile-based marketing
+channels typically yield higher :abbr:`CTOR (click-to-open rate)` and :abbr:`CTR (click-through
+rate)` outcomes.
 
 SMS marketing dashboard
 =======================
@@ -22,8 +23,8 @@ an organized display of the SMS mailings that have been created, and what their 
 the moment.
 
 .. note::
-   An :abbr:`SMS (Short Message Service)` can have one of the following statuses: :guilabel:`Draft`,
-   :guilabel:`In Queue`, :guilabel:`Sending`, or :guilabel:`Sent`.
+   An :abbr:`SMS (Short Message Service)` mailing can have one of the following statuses:
+   :guilabel:`Draft`, :guilabel:`In Queue`, :guilabel:`Sending`, or :guilabel:`Sent`.
 
 In the upper right corner of the main :guilabel:`SMS Marketing` dashboard, there are a few different
 view options to choose from. Each one provides a unique take on the same SMS information.
@@ -42,7 +43,7 @@ Create SMS messages
 ===================
 
 To start, click :guilabel:`Create` on the main :guilabel:`SMS Marketing` dashboard, and Odoo reveals
-a blank SMS template, which can be configured in a number of different ways.
+a blank SMS template form, which can be configured in a number of different ways.
 
 .. image:: sms_essentials/sms-create.png
    :align: center
@@ -71,7 +72,7 @@ To reveal all the possible options in the :guilabel:`Recipients` field, click th
 the choices Odoo makes avaialble.
 
 When another field (other than :guilabel:`Mailing List`) is selected, the option to specify that
-chosen field even further becomes available - either with a default recipient filter equation that
+chosen field even further becomes available — either with a default recipient filter equation that
 appears automatically (which can be customized to fit any business need), or, if no default
 recipient filter equation is present, an :guilabel:`Add Filter` button will appear.
 
@@ -83,11 +84,11 @@ whatever criteria is configured in those fields. Multiple rules can be added.
 
 .. example::
    If :guilabel:`Contact` is chosen, all of the *Contacts* records in the Odoo database (vendors,
-   customers, etc.) will receive the :abbr:`SMS (Short Message Service)`, by default - unless more
+   customers, etc.) will receive the :abbr:`SMS (Short Message Service)`, by default — unless more
    specific recipient rules are entered.
 
    For instance, the message below will only be sent to contacts in the database that are located in
-   the United States (e.g. `Country` > `Country Name` equals "United States"), and they haven't
+   the United States (e.g. `Country` > `Country Name` equals `United States`), and they haven't
    blacklisted themselves from any mailings (e.g. `Blacklist` > `is` > `not set`).
 
    .. image:: sms_essentials/contact-recipient.png
@@ -115,7 +116,7 @@ Service)` mailings it will take to deliver the complete message.
    :abbr:`SMS (Short Message Service)` messages will not be sent without credits.
 
 .. seealso::
-   :doc:`../pricing/pricing_and_faq`
+   `Odoo SMS - FAQ <https://iap-services.odoo.com/iap/sms/pricing>`_
 
 Track links used in SMS messages
 --------------------------------
@@ -147,16 +148,14 @@ Send SMS messages
 
 Once a mailing is created, choose when Odoo should deliver the message from the following options:
 
-:guilabel:`Send`: sends the message immediately. Consider using this option if the recipient list is
-highly refined, or in cases that involve fast approaching deadlines, such as a "flash sale."
-
-:guilabel:`Schedule`: choose a day (and time) for Odoo to send the mailing. This is typically the
-best option for mailings related to a specific event. Such a method can also be used to promote a
-limited-time offer, or to help plan a company's content strategy in advance.
-
-:guilabel:`Test`: allows for an :abbr:`SMS (Short Message Service)` to be sent to one or multiple
-numbers for test purposes. Remember to use a comma between phone numbers if multiple numbers are
-used as recipients.
+- :guilabel:`Send`: sends the message immediately. Consider using this option if the recipient list
+  is highly refined, or in cases that involve fast approaching deadlines, such as a "flash sale."
+- :guilabel:`Schedule`: choose a day (and time) for Odoo to send the mailing. This is typically the
+  best option for mailings related to a specific event. Such a method can also be used to promote a
+  limited-time offer, or to help plan a company's content strategy in advance.
+- :guilabel:`Test`: allows for an :abbr:`SMS (Short Message Service)` to be sent to one or multiple
+  numbers for test purposes. Remember to use a comma between phone numbers if multiple numbers are
+  used as recipients.
 
 Visualize reports
 =================
@@ -176,3 +175,7 @@ is visualized as different graphs and charts, which can be sorted and grouped in
 .. image:: sms_essentials/sms-reporting-page.png
    :align: center
    :alt: Reporting page in SMS Marketing.
+
+.. seealso::
+   - :doc:`sms_campaign_settings`
+   - :doc:`mailing_lists_blacklists`
