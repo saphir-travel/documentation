@@ -4,20 +4,21 @@ Create quality alerts
 
 :doc:`Configuring quality control points <quality_control_points>` is a great way to ensure that
 quality checks are performed at routine stages during specific operations. However, quality issues
-can often appear outside of these scheduled checks. Using Odoo Quality, users can create quality
+can often appear outside of these scheduled checks. Using *Odoo Quality*, users can create quality
 alerts for issues that are not detected by automated processes.
 
 Create quality alerts from the quality module
 =============================================
 
-In some situations, it is necessary to manually create quality alerts within the Quality module.
+In some situations, it is necessary to manually create quality alerts within the *Quality* module.
 
 .. example::
-    A helpdesk user who is notified of a product defect by a customer ticket can create an alert that
-    brings the issue to the attention of the relevant quality team.
+   A helpdesk user who is notified of a product defect by a customer ticket can create an alert that
+   brings the issue to the attention of the relevant quality team.
 
-To create a new quality alert, start from the Quality module and select :menuselection:`Quality
-Control --> Quality Alerts --> Create`. The quality alert form can then be filled out as follows:
+To create a new quality alert, start from the :menuselection:`Quality` module and select
+:menuselection:`Quality Control --> Quality Alerts --> Create`. The quality alert form can then be
+filled out as follows:
 
 - :guilabel:`Title`: choose a concise, yet descriptive title for the quality alert
 - :guilabel:`Product`: the product about which the quality alert is being created
@@ -42,32 +43,32 @@ The tabs at the bottom of the form can be used to provide additional information
 - :guilabel:`Miscellaneous`: the product vendor (if applicable), the company that produces
   the product, and the date assigned
 
-.. image:: quality_alerts/quality_alert_form.png
-    :align: center
-    :alt: An example of a completed quality alert form.
+.. image:: quality_alerts/quality-alert-form.png
+   :align: center
+   :alt: An example of a completed quality alert form.
 
 Create quality alerts during the manufacturing process
 ======================================================
 
-Odoo enables manufacturing employees to create quality alerts within a work order without
-accessing the Quality module. From the work order tablet view, click the :guilabel:`Menu` button in
-the top left corner and select :guilabel:`Quality Alert`.
+Odoo enables manufacturing employees to create quality alerts within a work order without accessing
+the *Quality* module. From the work order tablet view, click the :guilabel:`Menu` button in the top
+left corner and select :guilabel:`Quality Alert`.
 
-.. image:: quality_alerts/work_order_tablet_view_menu_button.png
-    :align: center
-    :alt: Access the work order menu.
+.. image:: quality_alerts/work-order-tablet-view-menu-button.png
+   :align: center
+   :alt: Access the work order menu.
 
 The quality alert form can then be filled out as detailed in the previous section. After saving the
-form, a new alert will appear on the :guilabel:`Quality Alerts` page of the Quality module.
+form, a new alert will appear on the :guilabel:`Quality Alerts` page of the *Quality* module.
 
 Manage existing quality alerts
 ==============================
 
-By default, quality alerts are organized in a Kanban board view. The stages of the Kanban board are
+By default, quality alerts are organized in a kanban board view. The stages of the kanban board are
 fully configurable and alerts can be moved from one stage to the next by dragging and dropping or
 from within each alert. Additional options are available for viewing alerts, including graph,
 calendar, and pivot table views.
 
 .. tip::
-    Users can filter alerts based on criteria like date assigned or date closed. Alerts can also be
-    grouped by quality team, root cause, or other details.
+   Users can filter alerts based on criteria like date assigned or date closed. Alerts can also be
+   grouped by quality team, root cause, or other details.
