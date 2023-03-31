@@ -6,12 +6,82 @@ You can manage as many bank or cash accounts as needed on your database. Configu
 allows you to have all your banking data up-to-date and ready for :doc:`reconciliation
 <../../bank/reconciliation/use_cases>` with your journal entries.
 
+<<<<<<< HEAD
 In Odoo Accounting, each bank account has a dedicated journal set to post all entries in a dedicated
 account. Both the journal and the account are automatically created and configured whenever you add
 a bank account.
+||||||| parent of 0c96c4fa4 (temp)
+In Odoo Accounting, each Bank Account is configured to have a dedicated *Journal* which is
+configured to post all entries in a dedicated *Account*.
+
+.. note:: Whenever you add a Bank Account, a dedicated journal and a dedicated account are
+   automatically created and configured.
+
+Every **Bank Journal** is displayed by default on the **Accounting Overview** in the form of a
+convenient card. It includes action buttons that are displayed when appropriate.
+
+.. image:: bank_accounts/bank_accounts_card.png
+   :align: center
+   :alt: Bank Journals Cards are displayed on the Accounting Overview in Odoo Accounting
+
+.. _bank_accounts_add:
+
+Add a new Bank Account
+======================
+
+You can either connect your bank account to your Odoo database, or configure your bank account
+manually and :doc:`upload the bank statements manually <../feeds/bank_statements>`.
+
+Bank Synchronization
+--------------------
+
+Connect your bank account to your database and have your bank statements synced automatically.
+
+To synchronize a new bank account, go to :menuselection:`Accounting --> Configuration`, click on
+*Add a Bank Account*, then find your bank in the list, click on *Connect*, and follow the
+instructions on-screen.
+=======
+In Odoo Accounting, each Bank Account is configured to have a dedicated *Journal* which is
+configured to post all entries in a dedicated *Account*.
+
+.. note:: Whenever you add a Bank Account, a dedicated journal and a dedicated account are
+   automatically created and configured.
+
+Every **Bank Journal** is displayed by default on the **Accounting Overview** in the form of a
+convenient card. It includes action buttons that are displayed when appropriate.
+
+.. image:: bank_accounts/bank_accounts_card.png
+   :align: center
+   :alt: Bank Journals Cards are displayed on the Accounting Overview in Odoo Accounting
+
+.. _bank_accounts_add:
+
+Add a new Bank Account
+======================
+
+You can either connect your bank account to your Odoo database, or configure your bank account
+manually and :doc:`upload the bank statements manually <../bank_statements>`.
+
+Bank Synchronization
+--------------------
+
+Connect your bank account to your database and have your bank statements synced automatically.
+
+To synchronize a new bank account, go to :menuselection:`Accounting --> Configuration`, click on
+*Add a Bank Account*, then find your bank in the list, click on *Connect*, and follow the
+instructions on-screen.
+>>>>>>> 0c96c4fa4 (temp)
 
 .. note::
+<<<<<<< HEAD
    Cash journals and accounts must be configured manually.
+||||||| parent of 0c96c4fa4 (temp)
+   :doc:`Click here <../../bank/feeds/bank_synchronization>` for more information about this bank
+   synchronization.
+=======
+   :doc:`Click here <../../bank/bank_synchronization>` for more information about this bank
+   synchronization.
+>>>>>>> 0c96c4fa4 (temp)
 
 Bank journals are displayed by default on the :guilabel:`Accounting Dashboard` in the form of cards
 which include action buttons.
@@ -33,6 +103,7 @@ To connect your bank account to your database, go to :menuselection:`Accounting 
 follow the instructions.
 
 .. seealso::
+<<<<<<< HEAD
    :doc:`../../bank/feeds/bank_synchronization`
 
 Create a bank account
@@ -134,3 +205,12 @@ Bank feeds
 .. seealso::
    - :doc:`../../bank/feeds/bank_synchronization`
    - :doc:`../../bank/feeds/bank_statements`
+||||||| parent of 0c96c4fa4 (temp)
+   * :doc:`../../bank/feeds/bank_synchronization`
+   * :doc:`../feeds/bank_statements`
+   * `Odoo Tutorials: Accounting Basics <https://www.odoo.com/r/lsZ>`_
+=======
+   - :doc:`../bank_synchronization`
+   - :doc:`../bank_statements`
+   - `Odoo Tutorials: Accounting Basics <https://www.odoo.com/r/lsZ>`_
+>>>>>>> 0c96c4fa4 (temp)
