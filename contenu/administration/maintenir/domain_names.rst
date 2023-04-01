@@ -1,6 +1,6 @@
-============
+===========
 Domain names
-============
+saphirtravelniger.com
 
 A **domain name** works as an address for your website. It makes the Internet much more accessible
 as it allows users to type a meaningful web address, such as ``www.odoo.com``, rather than its
@@ -346,7 +346,7 @@ In the :guilabel:`Domain` field, fill in the web address of your website (e.g.,
 
 .. image:: domain_names/website-settings.png
    :align: center
-   :alt: Configuring https://www.example.com as the Domain of the website
+   :alt: Configuring https://www.example.com as the Domain of the websit
 
 .. warning::
    Mapping your domain name with your Odoo website prevents Google from indexing both your custom
